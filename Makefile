@@ -17,11 +17,15 @@ build:
 	snapcraft
 
 install:
-	snap install packer-io*.snap --devmode --dangerous
+	snap install packer-io*.snap --dangerous
 
 remove:
 	snap remove packer-io
 
+login:
+	snapcraft login
 
+push:
+	snapcraft push packer-io*.snap
 
 dev: remove build install
