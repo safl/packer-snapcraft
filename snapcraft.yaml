@@ -1,0 +1,20 @@
+name: packer-io
+grade: stable
+version: 1.2.4
+summary: Build Automated Machine Images
+description: |
+  Packer is a tool for creating identical machine images for multiple platforms
+  from a single source configuration.
+  http://www.packer.io
+
+confinement: devmode
+
+parts:
+  packer:
+    plugin: dump
+    source: https://releases.hashicorp.com/packer/$SNAPCRAFT_PROJECT_VERSION/packer_$SNAPCRAFT_PROJECT_VERSION_linux_amd64.zip
+
+apps:
+  packer-io:
+    command: packer
+
