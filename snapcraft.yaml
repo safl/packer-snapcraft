@@ -1,5 +1,4 @@
 name: packer-io
-grade: stable
 version: 1.2.4
 summary: Build Automated Machine Images
 description: |
@@ -7,7 +6,8 @@ description: |
   from a single source configuration.
   http://www.packer.io
 
-confinement: devmode
+confinement: strict
+grade: stable
 
 parts:
   packer:
@@ -17,4 +17,4 @@ parts:
 apps:
   packer-io:
     command: packer
-
+    plugs: [home, network]
